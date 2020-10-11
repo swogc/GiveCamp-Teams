@@ -1,0 +1,26 @@
+﻿@model NewInvitationModel
+
+@{
+    ViewData["Title"] = "SWOGC Invite";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Southwest Ohio GiveCamp Invitation Request</h1>
+    <p>
+        Use this form to invite yourself to the Southwest Ohio GiveCamp Teams environment.  
+        After entering your email address below, you will be sent a link to join our Teams environment.
+    </p>
+    <p>
+        If you currently use Teams for your work or school, you may want to consider using your email account 
+        for that environment.  By doing this, you can still sign into Teams with that account and easily
+        switch to the SWOGC Teams channels.
+    </p>
+    
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        @Html.LabelFor(m => m.EmailAddress)
+        <br/>
+        @Html.TextBoxFor(m => m.EmailAddress)
+        <button type="submit">Submit</button>
+    }
+</div>
